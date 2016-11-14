@@ -1,19 +1,14 @@
 package example;
-
 import org.testng.annotations.Test;
-
 import com.google.common.collect.ImmutableMap;
-
 //import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
-
 import java.io.File;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,14 +25,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
-
 public class NewTestXvfb {
 	WebDriver driver;
 	boolean outOfStock = false;
-	private static ChromeDriverService service;
-	
-	
-
+	//private static ChromeDriverService service;
 	@BeforeTest
 	public void beforeTest() {	
 
@@ -57,7 +48,7 @@ public class NewTestXvfb {
 //		        .build();
 		
 		//File file = new File("F:\\Software Download_Ripon\\WebDriver\\chromedriver_win_22_0_1203_0b\\ch‌​romedriver.exe");
-		//v‌​22 System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+		//22 System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 		//driver = new ChromeDriver();
 		//kldfdkm 
 		//kdnfknd
