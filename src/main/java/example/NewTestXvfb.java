@@ -32,7 +32,7 @@ public class NewTestXvfb {
 	@BeforeTest
 	public void beforeTest() {	
 
-		String Xport = System.getProperty("lmportal.xvfb.id", ":99");
+		String Xport = System.getProperty("lmportal.xvfb.id", ":1");
 		System.setProperty("firefox.gecko.driver", "geckodriver");
 		// /usr/bin/firefox
 		final File firefoxPath = new File(System.getProperty("lmportal.deploy.firefox.path", "/usr/bin/firefox"));
