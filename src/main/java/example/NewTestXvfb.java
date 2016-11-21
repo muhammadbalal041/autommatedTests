@@ -40,13 +40,22 @@ public class NewTestXvfb {
 	@BeforeTest
 	public void beforeTest() {	
 
-		String Xport = System.getProperty("lmportal.xvfb.id", ":1");
-		System.setProperty("firefox.gecko.driver", "geckodriver");
+		//String Xport = System.getProperty("lmportal.xvfb.id", ":1");
+		//System.setProperty("firefox.gecko.driver", "geckodriver");
+		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		// /usr/bin/firefox
-		final File firefoxPath = new File(System.getProperty("lmportal.deploy.firefox.path", "/usr/bin/firefox"));
-		FirefoxBinary firefoxBinary = new FirefoxBinary(firefoxPath);
-		firefoxBinary.setEnvironmentProperty("DISPLAY", Xport);
-		driver = new FirefoxDriver(firefoxBinary, null);
+// 		final File firefoxPath = new File(System.getProperty("lmportal.deploy.firefox.path", "/usr/bin/google-chrome"));
+// 		FirefoxBinary firefoxBinary = new FirefoxBinary(firefoxPath);
+// 		firefoxBinary.setEnvironmentProperty("DISPLAY", Xport);
+// 		driver = new FirefoxDriver(firefoxBinary, null);
+		ChromeOptions options = new ChromeOptions();
+		options.setBinary("/usr/bin/google-chrome");
+		//Map<String, Object> chromeOptions = new Map<String, Object>();
+		//options.setBinary(path);
+		//options.setBinary("/usr/bin/google-chrome/");
+		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+		driver = new ChromeDriver(capabilities);
 		
 // 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 // 		service = new ChromeDriverService.Builder()
